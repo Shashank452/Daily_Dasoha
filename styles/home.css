@@ -1,0 +1,86 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: lightblue;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Main content styles */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+/* Column styles */
+.column {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styles */
+.column img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+
+/* Footer link styles */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    .column {
+        margin: 1rem 0;
+    }
+}

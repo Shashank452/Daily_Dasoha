@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="../styles/styles2.css">
+</head>
+<body class="signup">
+
+    <h1 style="text-align: center;">Sign Up</h1>
+    <form action="../php/signup.php" style="border:1px solid #ccc" method="post">
+        <div class="container">
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <label for="usr_id"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="usr_id" required>
+      
+          <label for="usr_email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="usr_email" required>
+      
+          <label for="usr_password"><b>password</b></label>
+          <input type="password" placeholder="Enter password" name="usr_password" required>
+      
+          <label for="usr_password_repeat"><b>Repeat password</b></label>
+          <input type="password" placeholder="Repeat password" name="usr_password_repeat" required>
+      
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+      
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn" name="signup" value="signup">Sign Up</button>
+          </div>
+        </div>
+      </form>
+
+</body>
+</html>

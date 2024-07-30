@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data_Entry</title>
+    <link rel="stylesheet" href="../styles/forms.css">
+    <script>
+        function showForm() {
+            const form = document.getElementById('myForm');
+            const radioYes = document.getElementById('yesCheck');
+
+            if (radioYes.checked) {
+                form.style.display = 'block'; // Show the form
+            } else {
+                form.style.display = 'none'; // Hide the form
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form method="get" action="../php/form.php" style="border:1px solid #ccc">
+    <div style="float: center;" >
+        <section>
+        <section style="float: center;">
+            <label for="date">Select the date:</label>
+            <input type="date" id="date" name="date" required>
+        </section>
+   
+        <section style="float: center;">
+            <label for="holiday" required>Is the selected day is a working day?</label><br>
+            <input type="radio" name="holiday" value="yes" id="yesCheck" onclick="showForm()">Yes</input>
+            <input type="radio" name="holiday" value="no" id="noCheck" onclick="showForm()">No</input>
+        </section>
+        </section>
+
+        <section id="myForm" style="display: none;" required="false">
+        <section style="float: center;">
+            <label for="grains">grains:</label>
+            <div>
+                <input type="radio" name="grains" value="rice">Rice</input>
+                <input type="radio" name="grains" value="wheat">Wheat</input>
+            </div>
+        </section>
+
+        <section id="primary" style="float: center;">
+            <h2><label for="primary">Enter no. of students from class 1-5:</label></h2>
+            <div>
+                <input type="number" id="primary" name="primary" >
+            </div>
+            <br>
+
+        </section> 
+        <section id="secondary" style="float: center;">
+            <h2><label for="secondary">Enter no. of students from class 6-8:</label></h2>
+            <div>
+                <input type="number" id="secondary" name="secondary" >
+            </div>
+            
+            <br>
+        </section>
+        <section id="tertiary" style="float: center;">
+            <h2><label for="tertiary">Enter no. of students from class 9-10:</label></h2>
+            <div>
+                <input type="number" id="tertiary" name="tertiary" >
+            </div>
+            
+            <br>
+        </section>
+        </section>
+    </div>
+    <div class="clearfix" style="margin-left: 33%;">
+        <button type="button" class="cancelbtn" style="width: 17%;" name="cancel" value="cancel">Cancel</button>
+        <button type="submit" class="signupbtn" style="width: 17%;" name="submit" value="submit">Submit</button>
+    </div>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Input Example</title>
+    <link rel="stylesheet" href="../styles/forms.css">
+</head>
+<body>
+    <form method="get" action="../php/custom_sort.php" style="border:1px solid #ccc">
+        <div style="float: center;" >
+            <section>
+            <section style="float: center;">
+                <label for="sdate">Select the from date:</label>
+                <input type="date" id="sdate" name="sdate" required>
+            </section>
+       
+            <section style="float: center;">
+                <label for="ldate">Select the to date:</label>
+                <input type="date" id="ldate" name="ldate" required>
+            </section>
+            </section>
+        </div>
+        <div class="clearfix" style="margin-left: 33%;">
+            <button type="button" class="cancelbtn" style="width: 17%;" name="cancel" value="cancel">Cancel</button>
+            <button type="submit" class="signupbtn" style="width: 17%;" name="submit" value="submit">Submit</button>
+        </div>
+    </form>
+
+</body>
+</html>

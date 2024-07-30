@@ -1,0 +1,102 @@
+<?php
+if (isset($_POST['submit']))
+{
+// Assuming your MySQLi connection is established elsewhere in your application
+// Replace these database connection details with your own
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "schooldb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "USE schooldb";
+$retvel = $conn->query($sql) ;
+$name = date('m') . ":" . date('y');
+
+$sql = "CREATE TABLE IF NOT EXISTS book($name) (
+    date0 date NOT NULL,
+    holiday VARCHAR(255) NOT NULL,
+    primary_students FLOAT(100),
+    secondary_students FLOAT(100),
+    tertiary_students FLOAT(100),
+    primary_milk FLOAT(100),
+    primary_rice FLOAT(100),
+    primary_wheat FLOAT(100),
+    primary_dhal FLOAT(100),
+    primary_oil FLOAT(100),
+    primary_salt FLOAT(100),
+    secondary_milk FLOAT(100),
+    secondary_rice FLOAT(100),
+    secondary_wheat FLOAT(100),
+    secondary_dhal FLOAT(100),
+    secondary_oil FLOAT(100),
+    secondary_salt FLOAT(100),
+    tertiary_milk FLOAT(100),
+    tertiary_rice FLOAT(100),
+    tertiary_wheat FLOAT(100),
+    tertiary_dhal FLOAT(100),
+    tertiary_oil FLOAT(100),
+    tertiary_salt FLOAT(100),
+)";
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Escape user inputs for security
+    $date = $conn->real_escape_string($_POST['date']);
+    $holiday = $conn->real_escape_string($_POST['holiday']);
+    $primary_students = $conn->real_escape_string($_POST['primary']);
+    $secondary_students = $conn->real_escape_string($_POST['secondary']);
+    $tertiary_students = $conn->real_escape_string($_POST['tertiary']);
+    $grains = $conn->real_escape_string($_POST['grains']);
+
+    $primary_milk = $primary_students * 18;
+    $primary_dhal = $primary_students * 20;
+    $primary_oil = $primary_students * 5;
+    $primary_salt = $primary_students * 2;
+
+    $secondary_milk = $secondary_students * 18;
+    $secondary_dhal = $secondary_students * 30;
+    $secondary_oil = $secondary_students * 7.5;
+    $secondary_salt = $secondary_students * 4;
+
+    $tertiary_milk = $tertiary_students * 18;
+    $tertiary_dhal = $tertiary_students * 30;
+    $tertiary_oil = $tertiary_students * 7.5;
+    $tertiary_salt = $tertiary_students * 4;
+
+    if($grains == rice)
+    {
+        $primary_rice = $primary_students * 100;
+        $secondary_rice = $secondary_students * 150;
+        $tertiary_rice = $tertiary_students * 150;
+    }
+    else if($grains == wheat)
+    {
+        $primary_wheat = $primary_students * 100;
+        $secondary_wheat = $secondary_students * 150;
+        $tertiary_wheat = $tertiary_students * 150;
+    }
+
+    // Insert data into database
+    $sql = "INSERT INTO book($name) (date0, holiday, primary_students, secondary_students, tertiary_students, primary_milk, primary_rice, primary_wheat, primary_dhal, primary_oil, primary_salt, secondary_milk, secondary_rice, secondary_wheat, secondary_dhal, secondary_oil, secondary_salt, tertiary_milk, tertiary_rice, tertiary_wheat, tertiary_dhal, tertiary_oil, tertiary_salt)
+    VALUES ('$date', '$holiday', '$primary_students', '$secondary_students', '$tertiary_students', '$primary_milk', '$primary_rice', '$primary_wheat', '$primary_dhal', '$primary_oil', '$primary_salt', '$secondary_milk', '$secondary_rice', '$secondary_wheat', '$secondary_dhal', '$secondary_oil', '$secondary_salt', '$tertiary_milk', '$tertiary_rice', '$tertiary_wheat', '$tertiary_dhal', '$tertiary_oil', '$tertiary_salt')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Data inserted successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Close connection
+$conn->close();
+
+}
+?>
