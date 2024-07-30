@@ -27,7 +27,7 @@ Paste the link in the browser: http://localhost/Daily_Dasoha-main/main.html
 Start the Server:
 Use a local server like XAMPP or WAMP to run the project.
 Access the Application:
-Open your web browser and navigate to http://localhost/midday-meal-management.
+Open your web browser and navigate to http://localhost/Daily_Dasoha-main/main.html.
 Login:
 Use the provided credentials to log in as a headmaster.
 Manage Data:
