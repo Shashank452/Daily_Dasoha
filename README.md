@@ -21,7 +21,7 @@ Place the Project in htdocs Directory inside XAMPP:
 
 Open XAMPP control panel and start Apache and MySql servers:
 
-Paste the link in the browser: http://localhost/daily_dasoha/main.html
+Paste the link in the browser: http://localhost/Daily_Dasoha-main/main.html
 
 # Usage
 Start the Server:
