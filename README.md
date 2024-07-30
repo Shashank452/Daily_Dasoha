@@ -28,8 +28,10 @@ Start the Server:
 Use a local server like XAMPP or WAMP to run the project.
 Access the Application:
 Open your web browser and navigate to http://localhost/Daily_Dasoha-main/main.html.
+SignUP:
+Register your profile with basic details.s
 Login:
-Use the provided credentials to log in as a headmaster.
+Use the credentials to log in.
 Manage Data:
 Record student attendance and view the calculated food grain requirements.
 
